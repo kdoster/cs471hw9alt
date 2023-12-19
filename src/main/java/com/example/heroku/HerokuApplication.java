@@ -65,10 +65,11 @@ public class HerokuApplication {
 
       ArrayList<String> output = new ArrayList<String>();
       while (rs.next()) {
-        output.add("Read from DB: " + rs.getTimestamp("tick") + rs.getString("random_string"));
+        output.add("Read from DB: " + rs.getTimestamp("tick") + " " + rs.getString("random_string"));
       }
 
       model.put("records", output);
+      System.out.println("Kyle Doster");
       return "db";
     } catch (Exception e) {
       model.put("message", e.getMessage());
